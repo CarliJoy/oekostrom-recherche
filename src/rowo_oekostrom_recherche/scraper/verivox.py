@@ -11,13 +11,14 @@ from rowo_oekostrom_recherche import log
 
 DOMAIN = "https://www.verivox.de"
 BASE_URL = "https://www.verivox.de/strom/anbieter/"
-SCRAPER = "verivvox"
+SCRAPER = "verivox"
 
 class VerivoxBase(AnbieterBase):
     portal_url: str
 
 
 def scrape_address(url: str) -> tuple[Address, str]:
+    note = ""
     try:
         site = httpx.get(url)
         site.raise_for_status()
@@ -29,14 +30,20 @@ def scrape_address(url: str) -> tuple[Address, str]:
         if len(addresses) != 1:
             raise ValueError(f"Multiple or none addresses found ({addresses})")
         address = addresses[0]
-        name, street, plz_city = address.stripped_strings
+        try:
+            name, street, plz_city = address.stripped_strings
+        except ValueError as e:
+            print(f"{e} for '{list(address.stripped_strings)}': Try recover")
+            name, *streets, plz_city, = address.stripped_strings
+            street = "\n".join(streets)
+            note = "Address might be wrong"
         plz, _, city = plz_city.partition(" ")
     except Exception as e:
         traceback.print_exc()
         return Address(street="", plz="", city=""), repr(e)
     else:
 
-        return Address(street=street, plz=plz, city=city), ""
+        return Address(street=street, plz=plz, city=city), note
 
 
 def scrape() -> ScrapeResults[VerivoxBase]:
@@ -55,7 +62,7 @@ def scrape() -> ScrapeResults[VerivoxBase]:
         log.info(
             "Start scraping address",
             scraper="verivox",
-            num=f"{i}/{total}",
+            num=f"{i+1}/{total}",
             carrier=name,
         )
 
