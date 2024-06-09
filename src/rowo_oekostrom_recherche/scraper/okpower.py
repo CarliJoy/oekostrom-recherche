@@ -10,7 +10,7 @@ from rowo_oekostrom_recherche import log
 
 DOMAIN = "https://www.ok-power.de"
 BASE_URL = "https://www.ok-power.de/fuer-strom-kunden/anbieter-uebersicht.html"
-SCRAPER = "ok-power"
+SCRAPER = "okpower"
 
 
 class OkPower(AnbieterBase):
