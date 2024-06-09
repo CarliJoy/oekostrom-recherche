@@ -3,7 +3,6 @@ import bs4
 import traceback
 from rowo_oekostrom_recherche.scraper.base import (
     AnbieterBase,
-    Address,
     ScrapeResults,
 )
 from rowo_oekostrom_recherche.scraper.manager import run_and_save
