@@ -21,6 +21,17 @@ class AnbieterBase(Address):
     mail: str = ""
     homepage: str = ""
 
+    def __str__(self) -> str:
+        result = self.name
+        addr = (self.street, self.city, self.plz)
+        if addr != ("", "", ""):
+            result += f" {'-'.join(addr)}"
+        vals = self.model_dump(exclude={'name', 'street', 'city', 'plz', 'sources', 'rowo2019'})
+        for k, v in vals.items():
+            if v:
+                result += f" {k}={v}"
+        return result
+
 
 TAnbieterBase = TypeVar("TAnbieterBase", bound=AnbieterBase)
 
