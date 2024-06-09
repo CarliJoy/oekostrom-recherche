@@ -1,5 +1,4 @@
 from typing import NewType, cast
-
 from rowo_oekostrom_recherche.scraper import (
     base,
     okpower,
@@ -8,14 +7,13 @@ from rowo_oekostrom_recherche.scraper import (
     stromauskunft,
     verivox,
 )
-import json
 from thefuzz import process
 from pydantic import Field
-from typing_extensions import TypedDict
+from typing_extensions import TypedDict, Literal
 
+from rowo_oekostrom_recherche.scraper.base import NameNormal
 
 Source = NewType("source", str)
-NameNormal = NewType("NameNormal", str)
 
 SELECTION_FILE = base.DATA_DIR / "combine_selections.csv"
 TARGET = Source("rowo2019")
@@ -43,26 +41,27 @@ SOURCE_TYPES: dict[Source, type[base.AnbieterBase]] = {
 }
 
 
-replaces = {
-    "ä": "ae",
-    "ö": "oe",
-    "ü": "ue",
-    "ß": "sz",
-    ";": "",
-}
-
-
-def normalize_name(name: str) -> NameNormal:
-    name = name.lower()
-    for search, replace in replaces.items():
-        name = name.replace(search, replace)
-    return NameNormal(name)
-
-
 def to_keydict(
     scrape_results: base.ScrapeResults,
 ) -> dict[NameNormal, base.AnbieterBase]:
-    return {normalize_name(r.name): r for r in scrape_results.results}
+    results: dict[NameNormal, base.AnbieterBase] = {}
+    duplicates: dict[NameNormal, list[base.AnbieterBase]] = {}
+    duplicate_keys: set[NameNormal] = set()
+    for r in scrape_results.results:
+        name = r.name_normalized
+        duplicates.setdefault(name, []).append(r)
+        if name in results:
+            duplicate_keys.add(name)
+        results[name] = r
+    if scrape_results.source == "oekotest":
+        duplicate_keys.remove(NameNormal("westfalenwind"))
+    if duplicate_keys:
+        for key in sorted(duplicate_keys):
+            print(f" -> {key} ({scrape_results.source})")
+            for obj in duplicates[key]:
+                print(f"      -> {obj}")
+        raise ValueError("Duplicate normalized names")
+    return results
 
 
 def load_data() -> dict[Source, dict[NameNormal, base.AnbieterBase]]:
@@ -82,11 +81,11 @@ def load_data() -> dict[Source, dict[NameNormal, base.AnbieterBase]]:
     return loaded_data
 
 
-def load_selections() -> dict[tuple[Source, NameNormal], NameNormal | None]:
+def load_selections() -> dict[tuple[Source, str], str | None]:
     """
     Load selections that have been already done
     """
-    selections: dict[tuple[Source, NameNormal], NameNormal | None] = {}
+    selections: dict[tuple[Source, str], str | None] = {}
     if SELECTION_FILE.exists():
         for line in SELECTION_FILE.read_text().splitlines(keepends=False):
             choice: str | None
@@ -97,60 +96,128 @@ def load_selections() -> dict[tuple[Source, NameNormal], NameNormal | None]:
     return selections
 
 
+def input_selection(choices: list[NameNormal]) -> NameNormal | None | Literal[-1]:
+    while True:
+        try:
+            result = input("> ").lower()
+            if result == "" and len(choices) == 1:
+                return choices[0]
+            if result == "x":
+                return None
+            if result == "s":
+                return -1
+            if result == "q":
+                print("Selected to exit")
+                raise KeyboardInterrupt()
+            return choices[int(result)-1]
+        except (ValueError, IndexError):
+            print(
+                "Invalid input. Try again. Input must be number between 1 and 4 or x or q."
+            )
+
+
 def extract_combination(
     source: Source,
     data_source: base.AnbieterBase,
-    anbieter_name: NameNormal,
-    target_data: dict[NameNormal, Combined],
+    check_for: NameNormal,
+    check_against: dict[NameNormal, Combined],
+    full_names_to_val: dict[str, Combined],
     taken_choices: set[NameNormal],
-) -> NameNormal | None:
+) -> Combined | None | Literal[-1]:
     selections = load_selections()
-    if (source, anbieter_name) in selections:
-        return selections[(source, anbieter_name)]
-    candidates = process.extract(anbieter_name, set(target_data.keys()), limit=4)
+    if (source, data_source.name) in selections:
+        pre_result = selections[(source, data_source.name)]
+        if pre_result == "-1":
+            return -1
+        if pre_result is None:
+            return None
+        return full_names_to_val[pre_result]
+    candidates = process.extractBests(
+        check_for, set(check_against.keys()), limit=20, score_cutoff=75
+    )
     if (
         candidates[0][1] > 95
-        and candidates[1][1] < 90
+        and (len(candidates) == 1 or candidates[1][1] <= 90)
         and candidates[0][0] not in taken_choices
     ):
-        print(f" -> Selection {candidates[0][0]} for {anbieter_name}")
-        return candidates[0][0]
+        print(f" -> Selected  {check_against[candidates[0][0]]}")
+        print(f"    ↪    for  {data_source}\n")
+        return check_against[candidates[0][0]]
     print(f"Looking for match: {data_source}")
     for i, candidate in enumerate(candidates, start=1):
         dup = "!taken already!" if candidate[0] in taken_choices else ""
-        print(f" ({i}) [{candidate[1]} %] {dup} {target_data[candidate[0]]}")
-    print(" (x) Add as new entry")
-    return None
+        indent = " " * 5
+        print(
+            f" ({i:>2}) [{candidate[1]:>3} %] {dup}{indent}{check_against[candidate[0]]}"
+        )
+    print(" (x) Add as new entry (q to quit, s to skip)")
+    selection = input_selection([candidate[0] for candidate in candidates])
+    if selection == -1 or selection is None:
+        with SELECTION_FILE.open("a") as f:
+            f.write(f"{source};{data_source.name};{selection or ''}\n")
+        return selection
+    result = check_against[selection]
+    with SELECTION_FILE.open("a") as f:
+        f.write(f"{source};{data_source.name};{result.name}\n")
+    return
 
 
 def combine() -> None:
     sources_data = load_data()
     target_data = cast(dict[NameNormal, Combined], sources_data[TARGET])
-
-    for source, anbieter_dict in sources_data.items():
-        if source == TARGET:
-            continue
-        print("#" * 120)
-        print(f"# Finding connection for {source}")
-        print("#" * 120)
-        take_choices: set[NameNormal] = set()
-        for anbieter_name, source_data in anbieter_dict.items():
-            target = extract_combination(
-                source, source_data, anbieter_name, target_data, take_choices
-            )
-            if target:
-                take_choices.add(target)
-                target_data[target].sources[source] = sources_data
-            else:
-                # add new entry as it was missing in original data
-                target_data[anbieter_name] = Combined.model_validate(
-                    {
-                        **source_data.model_dump(),
-                        "rowo2019": False,
-                        "sources": {source: source_data},
-                    },
-                    strict=False,
+    target_data_plz: dict[NameNormal, Combined] = {
+        v.name_normalized_plz: v for v in target_data.values()
+    }
+    full_names_to_val: dict[str, Combined] = {
+        v.name: v for v in target_data_plz.values()
+    }
+    found: int = 0
+    skipped: int = 0
+    added: int = 0
+    try:
+        for source, anbieter_dict in sources_data.items():
+            if source == TARGET:
+                continue
+            print("#" * 120)
+            print(f"# Finding connection for {source}")
+            print("#" * 120)
+            taken_choices: set[NameNormal] = set()
+            for anbieter_name, source_data in anbieter_dict.items():
+                check_for = anbieter_name
+                check_against = target_data
+                if source_data.plz:
+                    check_for = NameNormal(f"{source_data.plz} {anbieter_name}")
+                    check_against = target_data_plz
+                selection = extract_combination(
+                    source=source,
+                    data_source=source_data,
+                    check_for=check_for,
+                    check_against=check_against,
+                    full_names_to_val=full_names_to_val,
+                    taken_choices=taken_choices,
                 )
+                if selection == -1:
+                    skipped += 1
+                    continue
+                elif selection:
+                    found += 1
+                    taken_choices.add(selection.name_normalized)
+                    selection.sources[source] = sources_data
+                else:
+                    # add new entry as it was missing in original data
+                    added += 1
+                    new_obj = Combined.model_validate(
+                        {
+                            **source_data.model_dump(),
+                            "rowo2019": False,
+                            "sources": {source: source_data},
+                        },
+                        strict=False,
+                    )
+                    target_data[anbieter_name] = new_obj
+                    target_data_plz[new_obj.name_normalized_plz] = new_obj
+    except KeyboardInterrupt:
+        print(f"{found=}, {skipped=}, {added=}, exiting")
 
 
 if __name__ == "__main__":
