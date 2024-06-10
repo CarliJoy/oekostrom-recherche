@@ -27,6 +27,8 @@ pip install -r requirements.txt
 pip install -e .
 # run the script
 python src/rowo_oekostrom_recherche/combine.py
+
+# The status is saved under scraped_data/combine_selections.csv
 ```
 
 ## License
