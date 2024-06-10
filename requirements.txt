@@ -1,0 +1,25 @@
+annotated-types==0.6.0
+anyio==4.3.0
+beautifulsoup4==4.12.3
+certifi==2024.2.2
+et-xmlfile==1.1.0
+exceptiongroup==1.2.1
+h11==0.14.0
+httpcore==1.0.5
+httpx==0.27.0
+idna==3.7
+numpy==1.26.4
+openpyxl==3.1.3
+pandas==2.2.2
+pydantic==2.7.1
+pydantic_core==2.18.2
+python-dateutil==2.9.0.post0
+pytz==2024.1
+rapidfuzz==3.9.3
+-e git+https://github.com/CarliJoy/oekostrom-recherche.git@84a281760ac42c02e824fff75451e16e85a4459d#egg=rowo_oekostrom_recherche
+six==1.16.0
+sniffio==1.3.1
+soupsieve==2.5
+thefuzz==0.22.1
+typing_extensions==4.11.0
+tzdata==2024.1
