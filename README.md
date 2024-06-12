@@ -18,7 +18,7 @@ git clone https://github.com/CarliJoy/oekostrom-recherche.git
 # go to the newly cloned folder
 cd oekostrom-recherche
 # create new python virtual environment
-python -m venv .venv
+python3 -m venv .venv
 # activate the python environment
 source .venv/bin/activate
 # install the requirements
@@ -26,7 +26,7 @@ pip install -r requirements.txt
 # install the package
 pip install -e .
 # run the script
-python src/rowo_oekostrom_recherche/combine.py
+python3 src/rowo_oekostrom_recherche/combine.py
 
 # The status is saved under scraped_data/combine_selections.csv
 ```
