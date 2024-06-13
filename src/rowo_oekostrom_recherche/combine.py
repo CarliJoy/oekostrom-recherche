@@ -192,7 +192,7 @@ def combine() -> None:
     skipped: int = 0
     added: int = 0
     try:
-        for source, anbieter_dict in sources_data.items():
+        for source, anbieter_dict in sorted(sources_data.items()):
             if source == TARGET:
                 continue
             print("#" * 120)
