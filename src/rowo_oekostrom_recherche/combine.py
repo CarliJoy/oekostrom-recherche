@@ -109,7 +109,7 @@ def input_selection(choices: list[NameNormal]) -> NameNormal | None | Literal[-1
             if result == "q":
                 print("Selected to exit")
                 raise KeyboardInterrupt()
-            return choices[int(result)-1]
+            return choices[int(result) - 1]
         except (ValueError, IndexError):
             print(
                 "Invalid input. Try again. Input must be number between 1 and 4 or x or q."
@@ -135,6 +135,14 @@ def extract_combination(
     candidates = process.extractBests(
         check_for, set(check_against.keys()), limit=20, score_cutoff=75
     )
+    if len(candidates) == 0:
+        print(f" -> Selected  *NOTHING* (neuer Anbieter)")
+        print(f"    ↪    for  {data_source}\n")
+        return None
+
+    best_choice = check_against[candidates[0][0]]
+    select_best_choice = False
+
     if (
         candidates[0][1] > 95
         and (len(candidates) == 1 or candidates[1][1] <= 90)
