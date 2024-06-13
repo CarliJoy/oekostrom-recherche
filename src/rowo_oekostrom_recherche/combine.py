@@ -144,13 +144,22 @@ def extract_combination(
     select_best_choice = False
 
     if (
+        len(best_choice.name_normalized) > 5
+        and best_choice.name_normalized == data_source.name_normalized
+        or best_choice.name.lower() == data_source.name.lower()
+    ):
+        select_best_choice = True
+    elif (
         candidates[0][1] > 95
         and (len(candidates) == 1 or candidates[1][1] <= 90)
         and candidates[0][0] not in taken_choices
     ):
-        print(f" -> Selected  {check_against[candidates[0][0]]}")
+        select_best_choice = True
+
+    if select_best_choice:
+        print(f" -> Selected  {best_choice}")
         print(f"    ↪    for  {data_source}\n")
-        return check_against[candidates[0][0]]
+        return best_choice
     print(f"Looking for match: {data_source}")
     for i, candidate in enumerate(candidates, start=1):
         dup = "!taken already!" if candidate[0] in taken_choices else ""

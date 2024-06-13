@@ -16,6 +16,8 @@ replaces = {
     "ß": "sz",
     "&": "",
     ";": "",
+    ":": " ",
+    "-": " ",
     "marke der": "",
     # remove things not giving information
 }
