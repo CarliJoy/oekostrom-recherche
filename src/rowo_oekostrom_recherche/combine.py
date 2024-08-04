@@ -8,6 +8,7 @@ from rowo_oekostrom_recherche.scraper import (
     stromauskunft,
     verivox,
 )
+import json
 from thefuzz import process
 from pydantic import Field, ValidationError
 from typing_extensions import TypedDict, Literal
@@ -30,6 +31,14 @@ class SourceData(TypedDict, total=False):
 class Combined(rowo_2019.RoWo):
     rowo2019: bool = True
     sources: SourceData = Field(default_factory=SourceData)
+
+
+class Result(TypedDict):
+    rowo2019: str
+    oekotest: str
+    okpower: str
+    stromauskunft: str
+    verivox: str
 
 
 class LoadedSourceData(SourceData):
@@ -68,6 +77,9 @@ def to_keydict(
 def load_data() -> dict[Source, dict[NameNormal, base.AnbieterBase]]:
     loaded_data: dict[Source, dict[NameNormal, base.AnbieterBase]] = {}
     for source_file in base.DATA_DIR.glob("*.json"):
+        if source_file.name == "combined.json":
+            continue
+
         source = Source(source_file.name.removesuffix(".json"))
         target_type: type[base.AnbieterBase]
         if source == TARGET:
@@ -181,7 +193,7 @@ def extract_combination(
     result = check_against[selection]
     with SELECTION_FILE.open("a") as f:
         f.write(f"{source};{data_source.name};{result.name}\n")
-    return
+    return result
 
 
 def combine() -> None:
@@ -219,12 +231,14 @@ def combine() -> None:
                     taken_choices=taken_choices,
                 )
                 if selection == -1:
+                    # skipping entry
                     skipped += 1
                     continue
                 elif selection:
+                    # found match
                     found += 1
                     taken_choices.add(selection.name_normalized)
-                    selection.sources[source] = sources_data
+                    selection.sources[source] = source_data
                 else:
                     # add new entry as it was missing in original data
                     added += 1
@@ -240,6 +254,42 @@ def combine() -> None:
                     target_data_plz[new_obj.name_normalized_plz] = new_obj
     except KeyboardInterrupt:
         print(f"{found=}, {skipped=}, {added=}, exiting")
+    else:
+        print(f"{found=}, {skipped=}, {added=}")
+
+    results: list[Result] = []
+
+    combined: Combined
+    for combined in target_data.values():
+        results.append(
+            {
+                "rowo2019": combined.name if combined.rowo2019 else "",
+                "oekotest": (
+                    combined.sources["oekotest"].name
+                    if "oekotest" in combined.sources
+                    else ""
+                ),
+                "okpower": (
+                    combined.sources["okpower"].name
+                    if "okpower" in combined.sources
+                    else ""
+                ),
+                "stromauskunft": (
+                    combined.sources["stromauskunft"].name
+                    if "stromauskunft" in combined.sources
+                    else ""
+                ),
+                "verivox": (
+                    combined.sources["verivox"].name
+                    if "verivox" in combined.sources
+                    else ""
+                ),
+            }
+        )
+
+
+    with base.DATA_DIR.joinpath("combined.json").open("w") as f:
+        json.dump(results, f, indent=2, sort_keys=True, ensure_ascii=False)
 
 
 if __name__ == "__main__":
