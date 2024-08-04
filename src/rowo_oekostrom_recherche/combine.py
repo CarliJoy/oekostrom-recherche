@@ -1,4 +1,5 @@
 from typing import NewType, cast
+import sys
 from rowo_oekostrom_recherche.scraper import (
     base,
     okpower,
@@ -8,7 +9,7 @@ from rowo_oekostrom_recherche.scraper import (
     verivox,
 )
 from thefuzz import process
-from pydantic import Field
+from pydantic import Field, ValidationError
 from typing_extensions import TypedDict, Literal
 
 from rowo_oekostrom_recherche.scraper.base import NameNormal
@@ -73,9 +74,13 @@ def load_data() -> dict[Source, dict[NameNormal, base.AnbieterBase]]:
             target_type = Combined
         else:
             target_type = SOURCE_TYPES[source]
-        scrape_results = base.ScrapeResults[target_type].model_validate_json(
-            source_file.read_text()
-        )
+        try:
+            scrape_results = base.ScrapeResults[target_type].model_validate_json(
+                source_file.read_text()
+            )
+        except ValidationError as e:
+            print(f"Could not read {source_file.name}: {e}")
+            sys.exit(1)
         loaded_data[source] = to_keydict(scrape_results)
 
     return loaded_data
