@@ -1,7 +1,7 @@
 {
   "results": [
     {
-      "street": "Kurfürstenstraße 29",
+      "street": "Wredestraße 35",
       "city": "Ludwigshafen",
       "plz": "67059",
       "name": "123energie - eine Marke der Pfalzwerke AG",
@@ -8353,9 +8353,9 @@
       "portal_url": "https://www.stromauskunft.de/de/stromanbieter/uezw.html"
     },
     {
-      "street": "Überseering 12",
+      "street": "Amerigo-Vespucci-Platz 2",
       "city": "Hamburg",
-      "plz": "22297",
+      "plz": "20457",
       "name": "Vattenfall Europe Sales GmbH",
       "phone": "",
       "fax": "",
@@ -8750,5 +8750,5 @@
     }
   ],
   "source": "stromauskunft",
-  "create": "2024-06-09T13:18:42.054914"
+  "create": "2024-08-04T09:49:52.184442"
 }

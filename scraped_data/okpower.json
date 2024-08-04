@@ -477,6 +477,20 @@
       "cert_info": "Zertifiziert nach dem Kriterium 'Neuanlagenförderung'"
     },
     {
+      "street": "Bahnstraße 17",
+      "city": "Düsseldorf",
+      "plz": "40212",
+      "name": "Naturwerke GmbH",
+      "phone": "0211 756 10 100",
+      "fax": "",
+      "note": "",
+      "mail": "service@naturwerke.de",
+      "homepage": "https://www.naturwerke.de/",
+      "tarif": "ok-power Naturwerke",
+      "tarif_url": "https://www.ok-power.de/strominformationen/naturwerke.html",
+      "cert_info": "Zertifiziert nach dem Kriterium 'Neuanlagenförderung'"
+    },
+    {
       "street": "Kaiserstr. 36",
       "city": "Gütersloh",
       "plz": "33330",
@@ -937,8 +951,22 @@
       "tarif": "twsNaturstrom",
       "tarif_url": "https://www.ok-power.de/strominformationen/technische-werke-schussental.html",
       "cert_info": "Zertifiziert nach dem Kriterium 'Neuanlagenförderung'"
+    },
+    {
+      "street": "Hohenzollerndamm 54a",
+      "city": "Berlin",
+      "plz": "14199",
+      "name": "trawa (Future Energy Services GmbH)",
+      "phone": "",
+      "fax": "",
+      "note": "",
+      "mail": "info@trawa.de",
+      "homepage": "https://www.trawa.de/",
+      "tarif": "ok-power trawa",
+      "tarif_url": "https://www.ok-power.de/strominformationen/trawa.html",
+      "cert_info": "Zertifiziert nach dem Kriterium 'Innovative Projekte'"
     }
   ],
-  "source": "ok-power",
-  "create": "2024-06-09T13:32:06.403182"
+  "source": "okpower",
+  "create": "2024-08-04T09:49:57.962554"
 }

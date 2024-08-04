@@ -2317,6 +2317,18 @@
       "portal_url": "https://www.verivox.de//strom/anbieter/enwag/"
     },
     {
+      "street": "Marktplatz 4",
+      "city": "Weil der Stadt, Germany",
+      "plz": "71263",
+      "name": "EnWdS - Energie Weil der Stadt GmbH & Co. KG",
+      "phone": "",
+      "fax": "",
+      "note": "",
+      "mail": "",
+      "homepage": "",
+      "portal_url": "https://www.verivox.de//strom/anbieter/enwds/"
+    },
+    {
       "street": "Kaiserstraße 86",
       "city": "Herzogenrath",
       "plz": "52134",
@@ -2963,6 +2975,18 @@
       "mail": "",
       "homepage": "",
       "portal_url": "https://www.verivox.de//strom/anbieter/gw-kaufungen/"
+    },
+    {
+      "street": "Schleswiger Str. 3",
+      "city": "Sörup",
+      "plz": "24966",
+      "name": "Gemeindewerk Sörup GmbH",
+      "phone": "",
+      "fax": "",
+      "note": "",
+      "mail": "",
+      "homepage": "",
+      "portal_url": "https://www.verivox.de//strom/anbieter/gemeindewerk-soerup/"
     },
     {
       "street": "Kirchstraße 6",
@@ -4153,18 +4177,6 @@
       "portal_url": "https://www.verivox.de//strom/anbieter/hochsauerland/"
     },
     {
-      "street": "Im Mediapark 8",
-      "city": "Köln",
-      "plz": "50670",
-      "name": "idealenergie - eine Marke der Rheinische Elektrizitäts- und Gasversorgungsgesellschaft mbH",
-      "phone": "",
-      "fax": "",
-      "note": "",
-      "mail": "",
-      "homepage": "",
-      "portal_url": "https://www.verivox.de//strom/anbieter/idealenergie/"
-    },
-    {
       "street": "Sedanstr. 19",
       "city": "Lindenberg",
       "plz": "88161",
@@ -4177,9 +4189,9 @@
       "portal_url": "https://www.verivox.de//strom/anbieter/illwerke-vkw/"
     },
     {
-      "street": "Im Mediapark 8",
-      "city": "Köln",
-      "plz": "50670",
+      "street": "Lohrstr. 81",
+      "city": "Leverkusen",
+      "plz": "51371",
       "name": "immergrün! Energie - eine Marke der Rheinische Elektrizitäts- und Gasversorgungsgesellschaft mbH",
       "phone": "",
       "fax": "",
@@ -4559,6 +4571,18 @@
       "mail": "",
       "homepage": "",
       "portal_url": "https://www.verivox.de//strom/anbieter/mainzer-stadtwerke/"
+    },
+    {
+      "street": "Lindenstraße 30",
+      "city": "Bad Aibling, Deutschland",
+      "plz": "83043",
+      "name": "Mangfalltal Energie GmbH",
+      "phone": "",
+      "fax": "",
+      "note": "",
+      "mail": "",
+      "homepage": "",
+      "portal_url": "https://www.verivox.de//strom/anbieter/mangfalltal-energie/"
     },
     {
       "street": "Schulweg 8 - 14",
@@ -4969,6 +4993,18 @@
       "portal_url": "https://www.verivox.de//strom/anbieter/pfalzwerke/"
     },
     {
+      "street": "Dieselstr. 2",
+      "city": "Mühlheim am Main",
+      "plz": "63165",
+      "name": "PLAN-B NET ZERO ENERGY GmbH",
+      "phone": "",
+      "fax": "",
+      "note": "",
+      "mail": "",
+      "homepage": "",
+      "portal_url": "https://www.verivox.de//strom/anbieter/plan-b/"
+    },
+    {
       "street": "Lindwurmstr. 88",
       "city": "München",
       "plz": "80337",
@@ -5267,6 +5303,18 @@
       "mail": "",
       "homepage": "",
       "portal_url": "https://www.verivox.de//strom/anbieter/schleswiger-sw/"
+    },
+    {
+      "street": "Robert-Bosch-Str. 20",
+      "city": "Calw",
+      "plz": "75365",
+      "name": "schwarzwald energy GmbH",
+      "phone": "",
+      "fax": "",
+      "note": "",
+      "mail": "",
+      "homepage": "",
+      "portal_url": "https://www.verivox.de//strom/anbieter/schwarzwald-energy/"
     },
     {
       "street": "Bayenthalgürtel 9",
@@ -7007,6 +7055,18 @@
       "mail": "",
       "homepage": "",
       "portal_url": "https://www.verivox.de//strom/anbieter/sw-eschwege/"
+    },
+    {
+      "street": "Wilhelm-Kern-Platz 1",
+      "city": "Espelkamp",
+      "plz": "32339",
+      "name": "Stadtwerke Espelkamp AöR",
+      "phone": "",
+      "fax": "",
+      "note": "",
+      "mail": "",
+      "homepage": "",
+      "portal_url": "https://www.verivox.de//strom/anbieter/stadtwerke-espelkamp/"
     },
     {
       "street": "Rüttenscheider Straße 27 - 37",
@@ -9433,18 +9493,6 @@
       "portal_url": "https://www.verivox.de//strom/anbieter/sw-pfullendorf/"
     },
     {
-      "street": "Am Hafen 67",
-      "city": "Pinneberg",
-      "plz": "25421",
-      "name": "Stadtwerke Pinneberg GmbH",
-      "phone": "",
-      "fax": "",
-      "note": "",
-      "mail": "",
-      "homepage": "",
-      "portal_url": "https://www.verivox.de//strom/anbieter/sw-pinneberg/"
-    },
-    {
       "street": "An der Streckbrücke 4",
       "city": "Pirmasens",
       "plz": "66954",
@@ -10357,6 +10405,18 @@
       "portal_url": "https://www.verivox.de//strom/anbieter/sw-stuttgart/"
     },
     {
+      "street": "Am Hafen 67",
+      "city": "Pinneberg",
+      "plz": "25421",
+      "name": "Stadtwerke Südholstein GmbH",
+      "phone": "",
+      "fax": "",
+      "note": "",
+      "mail": "",
+      "homepage": "",
+      "portal_url": "https://www.verivox.de//strom/anbieter/sw-suedholstein/"
+    },
+    {
       "street": "Fröhliche-Mann-Straße 2",
       "city": "Suhl",
       "plz": "98528",
@@ -10379,18 +10439,6 @@
       "mail": "",
       "homepage": "",
       "portal_url": "https://www.verivox.de//strom/anbieter/sw-sulzbach-saar/"
-    },
-    {
-      "street": "Zufallsstr. 17",
-      "city": "Testung",
-      "plz": "17398",
-      "name": "Stadtwerke Testung GmbH",
-      "phone": "",
-      "fax": "",
-      "note": "",
-      "mail": "",
-      "homepage": "",
-      "portal_url": "https://www.verivox.de//strom/anbieter/sw-testung/"
     },
     {
       "street": "Gasstraße 26",
@@ -10451,18 +10499,6 @@
       "mail": "",
       "homepage": "",
       "portal_url": "https://www.verivox.de//strom/anbieter/sw-torgelow/"
-    },
-    {
-      "street": "Esinger Straße 1",
-      "city": "Tornesch",
-      "plz": "25436",
-      "name": "Stadtwerke Tornesch GmbH",
-      "phone": "",
-      "fax": "",
-      "note": "",
-      "mail": "",
-      "homepage": "",
-      "portal_url": "https://www.verivox.de//strom/anbieter/sw-tornesch/"
     },
     {
       "street": "Gasstrasse 37",
@@ -12577,7 +12613,7 @@
       "portal_url": "https://www.verivox.de//strom/anbieter/zev/"
     },
     {
-      "street": "Kurfürstenstraße 29",
+      "street": "Wredestraße 35",
       "city": "Ludwigshafen",
       "plz": "67059",
       "name": "123energie - eine Marke der Pfalzwerke AG",
@@ -12601,6 +12637,6 @@
       "portal_url": "https://www.verivox.de//strom/anbieter/17er-oberlandenergie/"
     }
   ],
-  "source": "verivvox",
-  "create": "2024-06-09T14:37:12.205120"
+  "source": "verivox",
+  "create": "2024-08-04T09:59:55.682558"
 }
