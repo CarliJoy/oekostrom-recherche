@@ -196,6 +196,16 @@ def extract_combination(
     return result
 
 
+def get_dupes(lst: list[str]) -> list[str]:
+    """
+    Get all duplicated items
+
+    see  https://stackoverflow.com/a/9835819/3813064
+    """
+    seen: set[str] = set()
+    return [x for x in lst if x and x in seen or seen.add(x)]
+
+
 def combine() -> None:
     sources_data = load_data()
     target_data = cast(dict[NameNormal, Combined], sources_data[TARGET])
@@ -208,6 +218,7 @@ def combine() -> None:
     found: int = 0
     skipped: int = 0
     added: int = 0
+    loaded_names: dict[Source, list[str]] = {}
     try:
         for source, anbieter_dict in sorted(sources_data.items()):
             if source == TARGET:
@@ -216,7 +227,9 @@ def combine() -> None:
             print(f"# Finding connection for {source}")
             print("#" * 120)
             taken_choices: set[NameNormal] = set()
+            loaded_names[source] = []
             for anbieter_name, source_data in anbieter_dict.items():
+                loaded_names[source].append(source_data.name)
                 check_for = anbieter_name
                 check_against = target_data
                 if source_data.plz:
@@ -252,6 +265,7 @@ def combine() -> None:
                     )
                     target_data[anbieter_name] = new_obj
                     target_data_plz[new_obj.name_normalized_plz] = new_obj
+                    full_names_to_val[new_obj.name] = new_obj
     except KeyboardInterrupt:
         print(f"{found=}, {skipped=}, {added=}, exiting")
     else:
@@ -287,6 +301,33 @@ def combine() -> None:
             }
         )
 
+    # Ensure everything was combined and nothing is duplicated
+    transposed: dict[str, list[str]] = {}
+    for result in results:
+        for source, anbieter in result.items():
+            if anbieter:
+                transposed.setdefault(source, []).append(anbieter)
+
+    # no duplicates
+    for source, anbieters in transposed.items():
+        if len(anbieters) != len(set(anbieters) - {""}):
+            raise ValueError(f"Duplicates in {source}: {get_dupes(anbieters)}")
+
+    for source, anbieters in loaded_names.items():
+        if len(anbieters) != len(set(anbieters) - {""}):
+            raise ValueError(f"Duplicates in {source}: {get_dupes(anbieters)}")
+
+    # everything combined
+    missing_sources = ""
+    for source, anbieters in loaded_names.items():
+        anbieter_combined = transposed[source]
+        missing = set(anbieters) - set(anbieter_combined)
+        if missing:
+
+            missing_sources += f'{source}: {", ".join(sorted(missing))}\n'
+
+    if missing_sources:
+        raise ValueError(missing_sources)
 
     with base.DATA_DIR.joinpath("combined.json").open("w") as f:
         json.dump(results, f, indent=2, sort_keys=True, ensure_ascii=False)

@@ -14,8 +14,8 @@ oekotest;In(n) Energie;
 oekotest;LichtBlick;LichtBlick SE
 oekotest;Mark-E AG;Mark-E Aktiengesellschaft
 oekotest;MEGA Monheim;MEGA Monheimer Elektrizitäts- und Gasversorgung GmbH
-oekotest;Naturstrom;
-oekotest;NEW Niederrhein;NEW AG
+oekotest;Naturstrom;Naturstrom – NaturStromHandel GmbH
+oekotest;NEW Niederrhein;NEW Niederrhein Energie und Wasser GmbH
 oekotest;NEW;NEW AG
 oekotest;Prokon;PROKON Regenerative Energien eG
 oekotest;Stadtwerk am See/Bodensee Energie;Bodensee Energie - eine Marke der Stadtwerk am See GmbH & Co. KG
@@ -52,13 +52,13 @@ stromauskunft;123energie - eine Marke der Pfalzwerke AG;123energie - Eine Marke 
 stromauskunft;AggerEnergie GmbH;Agger Energie GmbH
 stromauskunft;e-rp GmbH;e-rp GmbH
 stromauskunft;E-Werk Wanfried von Scharfenberg GmbH & Co. KG;Elektrizitätswerk Wanfried von Scharfenberg KG
-stromauskunft;Elektrizitätsgenossenschaft Engelsberg e.G.;-1
+stromauskunft;Elektrizitätsgenossenschaft Engelsberg e.G.;Elektrizitätsgenossenschaft Engelsberg e.G.
 stromauskunft;Elektrizitätswerke Schönau Vertriebs GmbH;EWS - Elektrizitätswerke Schönau Vertriebs GmbH
 stromauskunft;EMB Energie Brandenburg GmbH;EMB Energie Mark Brandenburg GmbH
 stromauskunft;enercity AG;enercity AG
 stromauskunft;ENERGIERIED GmbH & Co. KG;ENERGIERIED GmbH & Co. KG
 stromauskunft;Energieversorgung Ottobrunn GmbH;Energieversorgung Ottobrunn GmbH
-stromauskunft;Energieversorgung Werther GmbH;-1
+stromauskunft;Energieversorgung Werther GmbH;EWG Elektrizitätsversorgung Werther GmbH
 stromauskunft;enerSwitch - eine Marke der EWV Energie- und Wasser-Versorgung GmbH Stolberg;enerSwitch - eine Marke der EWV Energie- und Wasser-Versorgung GmbH Stolberg
 stromauskunft;ENTEGA Plus GmbH;ENTEGA Energie GmbH
 stromauskunft;envitra - eine Marke der DEG Deutsche Energie GmbH;
@@ -75,7 +75,7 @@ stromauskunft;Green Planet Energy eG;Greenpeace Energy eG
 stromauskunft;Grünstromwerk Vertriebs GmbH;Grünstromwerk Vertriebs GmbH - eine Marke der NATURSTROM AG
 stromauskunft;Hamburger Energiewerke GmbH;HAMBURG ENERGIE GmbH
 stromauskunft;Heinrich Klöcker GmbH & Co.KG;Heinrich Klöcker GmbH & Co. KG
-stromauskunft;Hochstiftstrom - eine Marke der Stadtwerke Lemgo GmbH;Stadtwerke Lemgo GmbH
+stromauskunft;Hochstiftstrom - eine Marke der Stadtwerke Lemgo GmbH;
 stromauskunft;illwerke vkw Deutschland GmbH;illwerke vkw AG
 stromauskunft;Kristal Enerji - eine Marke der Stadtwerke Pforzheim GmbH & Co. KG;Kristal Enerji - eine Marke der Stadtwerke Pforzheim GmbH & Co. KG
 stromauskunft;Mainzer Stadtwerke Energie und Service GmbH;Mainzer Stadtwerke Vertrieb und Service GmbH
@@ -88,10 +88,10 @@ stromauskunft;ROTHMOSER GMBH & CO. KG;P & M Rothmoser GmbH & Co KG Elektrizität
 stromauskunft;SachsenEnergie AG;
 stromauskunft;Stadtwerke Baiersdorf Kommunalunternehmen AdöR;Städtisches Kommunalunternehmen Baiersdorf
 stromauskunft;Stadtwerke Bruchsal GmbH;Energie- und Wasserversorgung Bruchsal GmbH
-stromauskunft;Stadtwerke Hameln Weserbergland GmbH;Stadtwerke Weserbergland GmbH
+stromauskunft;Stadtwerke Hameln Weserbergland GmbH;GWS Stadtwerke Hameln GmbH
 stromauskunft;Stadtwerke Hof Energie+Wasser GmbH;HEW HofEnergie+Wasser GmbH
 stromauskunft;Stadtwerke Meerbusch GmbH;stm Stadtwerke Meerbusch GmbH
-stromauskunft;switch Energievertriebsgesellschaft m.b.H.;Stadtwerke Lindau (B) GmbH & Co. KG
+stromauskunft;switch Energievertriebsgesellschaft m.b.H.;
 stromauskunft;SWS Energie GmbH;SWS Stadtwerke Stralsund GmbH
 stromauskunft;TEAG Thüringer Energie AG;Thüringer Energie AG
 stromauskunft;Vereinigte Gas- und Wasserversorgung GmbH;VGW – Vereinigte Gas- und Wasserversorgung GmbH
@@ -101,10 +101,10 @@ verivox;AggerEnergie GmbH;Agger Energie GmbH
 verivox;Amtswerke Eggebek GmbH & Co KG;
 verivox;Bayernwerk Regio Energie GmbH;
 verivox;Berliner Stadtwerke EnergiePartner GmbH;Berliner Stadtwerke GmbH
-verivox;Bewag - eine Marke der Vattenfall Europe Sales GmbH;-1
+verivox;Bewag - eine Marke der Vattenfall Europe Sales GmbH;
 verivox;Brillant Energie GmbH - Ein Unternehmen der Stadtwerke Leipzig GmbH;
 verivox;Elektrizitätsversorgung Berlin ElVeBe GmbH;
-verivox;Elektrizitätswerk Tegernsee Carl Miller KG;Elektrizitätswerk Tegernsee Vertriebs- und Service-KG
+verivox;Elektrizitätswerk Tegernsee Carl Miller KG;
 verivox;Elektrizitätswerke Schönau Vertriebs GmbH;EWS - Elektrizitätswerke Schönau Vertriebs GmbH
 verivox;EMB Energie Brandenburg GmbH;EMB Energie Mark Brandenburg GmbH
 verivox;Energie Nordschaumburg GmbH;
@@ -116,15 +116,15 @@ verivox;Energy Market Solutions GmbH;
 verivox;ENTEGA Plus GmbH;ENTEGA Energie GmbH
 verivox;EVD EnergieVersorgung Deutschland GmbH;
 verivox;E-Werk Wanfried von Scharfenberg GmbH & Co. KG;Elektrizitätswerk Wanfried von Scharfenberg KG
-verivox;EWV Baesweiler GmbH & Co. KG;EWV Energie- und Wasser-Versorgung GmbH Stolberg
+verivox;EWV Baesweiler GmbH & Co. KG;
 verivox;EWV Energie- und Wasser-Versorgung GmbH;EWV Energie- und Wasser-Versorgung GmbH Stolberg
 verivox;GemeindeStrom Wadgassen GmbH;
 verivox;Gemeindewerke Bovenden GmbH & Co. KG;Gemeindewerken Bovenden GmbH & Co. KG
-verivox;Gemeindewerke Enkenbach-Alsenborn;Verbandsgemeindewerke Enkenbach-Alsenborn
+verivox;Gemeindewerke Enkenbach-Alsenborn;
 verivox;Gemeindliche Werke Hengersberg;Gemeindl. Werke Hengersberg
 verivox;goldstrom - eine Marke der goldgas GmbH;goldgas GmbH
 verivox;Green Planet Energy eG;Greenpeace Energy eG
-verivox;greenergy24 - eine Marke der LeineEnergie GmbH;Stadtwerke Neustadt am Rübenberge GmbH & Co. KG
+verivox;greenergy24 - eine Marke der LeineEnergie GmbH;
 verivox;Grünwelt Wärmestrom GmbH;Grünwelt - eine Marke der Stromio GmbH
 verivox;GVG Rhein-Erft GmbH;Gasversorgungsgesellschaft mbH Rhein-Erft (GVG)
 verivox;Hamburger Energiewerke GmbH;HAMBURG ENERGIE GmbH
@@ -133,7 +133,7 @@ verivox;idealenergie - eine Marke der Rheinische Elektrizitäts- und Gasversorgu
 verivox;Gemeindewerke Heusweiler GmbH;Gemeindewerke Heusweiler GmbH
 verivox;illwerke vkw Deutschland GmbH;illwerke vkw AG
 verivox;immergrün! Energie - eine Marke der Rheinische Elektrizitäts- und Gasversorgungsgesellschaft mbH;immergrün! Energie - Eine Marke der 365 AG
-verivox;In(n) Energie GmbH;-1
+verivox;In(n) Energie GmbH;In(n) Energie
 verivox;INNergie GmbH;INNergie - eine Marke der Stadtwerke Rosenheim Versorgungs GmbH
 verivox;LWE Landwerke Eifel Vertriebs-GmbH;
 verivox;Mainzer Stadtwerke Energie und Service GmbH;Mainzer Stadtwerke Vertrieb und Service GmbH
@@ -145,13 +145,13 @@ verivox;nowenergy GmbH;
 verivox;Octopus Energy Germany GmbH;
 verivox;optimization engineers GmbH;RELAX-STROM - eine Marke der optimization engineers GmbH
 verivox;PRO-E Preußisch Oldendorfer Energieversorgung GmbH;
-verivox;purpur-energy - eine Marke der Stadtwerke Garbsen GmbH;Stadtwerke Garbsen GmbH
+verivox;purpur-energy - eine Marke der Stadtwerke Garbsen GmbH;
 verivox;RABOT CHARGE GmbH;
 verivox;Raiffeisen Waren GmbH;
 verivox;Respect Energy GmbH;
 verivox;ROTHMOSER GMBH & CO. KG;P & M Rothmoser GmbH & Co KG Elektrizitätswerk
 verivox;Rupert Buchauer E-Werk & Elektrotechnik;Rupert Buchauer Elektrizitätswerk Frasdorf-Oberprienmühle
-verivox;SachsenEnergie Versorgung GmbH;-1
+verivox;SachsenEnergie Versorgung GmbH;
 verivox;SimplyGreen von Energy Market Solutions GmbH;SimplyGreen - eine Marke der ENTEGA Energie GmbH
 verivox;SpreeGas - eine Marke der EMB Energie Brandenburg GmbH;SpreeGas Gesellschaft für Gasversorgung und Energiedienstleistung mbH
 verivox;Stadtwerke Aue - Bad Schlema GmbH;Stadtwerke Aue GmbH
@@ -162,7 +162,7 @@ verivox;Stadtwerke Eppingen GmbH & Co. KG;Stadtwerke Eppingen GmbH & Co. KG
 verivox;Stadtwerke Erft GmbH;
 verivox;Stadtwerke Fröndenberg Wickede GmbH;Stadtwerke Fröndenberg GmbH
 verivox;Stadtwerke Greifswald GmbH;Stromversorgung Greifswald GmbH
-verivox;Stadtwerke Hameln Weserbergland GmbH;Stadtwerke Weserbergland GmbH
+verivox;Stadtwerke Hameln Weserbergland GmbH;GWS Stadtwerke Hameln GmbH
 verivox;Stadtwerke Hof Energie+Wasser GmbH;HEW HofEnergie+Wasser GmbH
 verivox;Stadtwerke Hürth AöR;
 verivox;Stadtwerke Kerpen GmbH und Co. KG;Stadtwerke Kerpen - in Kooperation mit innogy SE
@@ -193,3 +193,4 @@ verivox;Stadtwerke Plattling;Stadtwerke Plattling
 verivox;Stadtwerke Weinstadt;Stadtwerke Weinstadt
 verivox;Stadtwerke Steinfurt GmbH;Stadtwerke Steinfurt GmbH
 verivox;WIND LINE;WIND LINE
+verivox;Vattenfall Europe Sales GmbH;Vattenfall Europe Sales GmbH

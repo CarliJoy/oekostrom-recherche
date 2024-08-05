@@ -164,7 +164,7 @@
     "oekotest": "",
     "okpower": "",
     "rowo2019": "Elektrizitätsgenossenschaft Engelsberg e.G.",
-    "stromauskunft": "",
+    "stromauskunft": "Elektrizitätsgenossenschaft Engelsberg e.G.",
     "verivox": "Elektrizitätsgenossenschaft Engelsberg e.G."
   },
   {
@@ -2831,7 +2831,7 @@
     "oekotest": "",
     "okpower": "",
     "rowo2019": "EWG Elektrizitätsversorgung Werther GmbH",
-    "stromauskunft": "",
+    "stromauskunft": "Energieversorgung Werther GmbH",
     "verivox": "Energieversorgung Werther GmbH"
   },
   {
@@ -3654,7 +3654,7 @@
     "verivox": ""
   },
   {
-    "oekotest": "",
+    "oekotest": "Naturstrom",
     "okpower": "",
     "rowo2019": "Naturstrom – NaturStromHandel GmbH",
     "stromauskunft": "NaturStromHandel GmbH",
@@ -3909,7 +3909,7 @@
     "oekotest": "",
     "okpower": "",
     "rowo2019": "Stadtwerke Lindau (B) GmbH & Co. KG",
-    "stromauskunft": "switch Energievertriebsgesellschaft m.b.H.",
+    "stromauskunft": "Stadtwerke Lindau (B) GmbH & Co. KG",
     "verivox": "Stadtwerke Lindau (B) GmbH & Co. KG"
   },
   {
@@ -4571,7 +4571,7 @@
     "verivox": ""
   },
   {
-    "oekotest": "",
+    "oekotest": "NEW Niederrhein",
     "okpower": "",
     "rowo2019": "NEW Niederrhein Energie und Wasser GmbH",
     "stromauskunft": "NEW Niederrhein Energie und Wasser GmbH",
@@ -5267,8 +5267,8 @@
     "oekotest": "",
     "okpower": "",
     "rowo2019": "GWS Stadtwerke Hameln GmbH",
-    "stromauskunft": "",
-    "verivox": ""
+    "stromauskunft": "Stadtwerke Hameln Weserbergland GmbH",
+    "verivox": "Stadtwerke Hameln Weserbergland GmbH"
   },
   {
     "oekotest": "",
@@ -5541,7 +5541,7 @@
     "okpower": "",
     "rowo2019": "Stadtwerke Weserbergland GmbH",
     "stromauskunft": "Stadtwerke Weserbergland GmbH",
-    "verivox": "Stadtwerke Hameln Weserbergland GmbH"
+    "verivox": ""
   },
   {
     "oekotest": "",
@@ -8323,13 +8323,6 @@
     "verivox": "Stadtwerke Leinfelden-Echterdingen"
   },
   {
-    "oekotest": "Naturstrom",
-    "okpower": "",
-    "rowo2019": "",
-    "stromauskunft": "",
-    "verivox": ""
-  },
-  {
     "oekotest": "Bürgerinitiative Umweltschutz - Ökostrom Pool",
     "okpower": "",
     "rowo2019": "",
@@ -8348,7 +8341,7 @@
     "okpower": "",
     "rowo2019": "",
     "stromauskunft": "",
-    "verivox": ""
+    "verivox": "In(n) Energie GmbH"
   },
   {
     "oekotest": "",
@@ -8417,6 +8410,13 @@
     "oekotest": "",
     "okpower": "",
     "rowo2019": "",
+    "stromauskunft": "Hochstiftstrom - eine Marke der Stadtwerke Lemgo GmbH",
+    "verivox": ""
+  },
+  {
+    "oekotest": "",
+    "okpower": "",
+    "rowo2019": "",
     "stromauskunft": "Niedersachsen Ports GmbH & Co.KG Niederlassung Emden",
     "verivox": "Niedersachsen Ports GmbH & Co.KG Niederlassung Emden"
   },
@@ -8438,6 +8438,13 @@
     "oekotest": "",
     "okpower": "",
     "rowo2019": "",
+    "stromauskunft": "switch Energievertriebsgesellschaft m.b.H.",
+    "verivox": ""
+  },
+  {
+    "oekotest": "",
+    "okpower": "",
+    "rowo2019": "",
     "stromauskunft": "",
     "verivox": "Amtswerke Eggebek GmbH & Co KG"
   },
@@ -8453,6 +8460,13 @@
     "okpower": "",
     "rowo2019": "",
     "stromauskunft": "",
+    "verivox": "Bewag - eine Marke der Vattenfall Europe Sales GmbH"
+  },
+  {
+    "oekotest": "",
+    "okpower": "",
+    "rowo2019": "",
+    "stromauskunft": "",
     "verivox": "Brillant Energie GmbH - Ein Unternehmen der Stadtwerke Leipzig GmbH"
   },
   {
@@ -8461,6 +8475,13 @@
     "rowo2019": "",
     "stromauskunft": "",
     "verivox": "Elektrizitätsversorgung Berlin ElVeBe GmbH"
+  },
+  {
+    "oekotest": "",
+    "okpower": "",
+    "rowo2019": "",
+    "stromauskunft": "",
+    "verivox": "Elektrizitätswerk Tegernsee Carl Miller KG"
   },
   {
     "oekotest": "",
@@ -8516,6 +8537,13 @@
     "okpower": "",
     "rowo2019": "",
     "stromauskunft": "",
+    "verivox": "EWV Baesweiler GmbH & Co. KG"
+  },
+  {
+    "oekotest": "",
+    "okpower": "",
+    "rowo2019": "",
+    "stromauskunft": "",
     "verivox": "FischerStrom KG"
   },
   {
@@ -8537,7 +8565,21 @@
     "okpower": "",
     "rowo2019": "",
     "stromauskunft": "",
+    "verivox": "Gemeindewerke Enkenbach-Alsenborn"
+  },
+  {
+    "oekotest": "",
+    "okpower": "",
+    "rowo2019": "",
+    "stromauskunft": "",
     "verivox": "GP JOULE Plus GmbH"
+  },
+  {
+    "oekotest": "",
+    "okpower": "",
+    "rowo2019": "",
+    "stromauskunft": "",
+    "verivox": "greenergy24 - eine Marke der LeineEnergie GmbH"
   },
   {
     "oekotest": "",
@@ -8635,6 +8677,13 @@
     "okpower": "",
     "rowo2019": "",
     "stromauskunft": "",
+    "verivox": "purpur-energy - eine Marke der Stadtwerke Garbsen GmbH"
+  },
+  {
+    "oekotest": "",
+    "okpower": "",
+    "rowo2019": "",
+    "stromauskunft": "",
     "verivox": "RABOT CHARGE GmbH"
   },
   {
@@ -8650,6 +8699,13 @@
     "rowo2019": "",
     "stromauskunft": "",
     "verivox": "Respect Energy GmbH"
+  },
+  {
+    "oekotest": "",
+    "okpower": "",
+    "rowo2019": "",
+    "stromauskunft": "",
+    "verivox": "SachsenEnergie Versorgung GmbH"
   },
   {
     "oekotest": "",
